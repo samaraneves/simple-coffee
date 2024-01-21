@@ -10,6 +10,7 @@ export const Wrapper = styled.main`
     padding: 1rem;
     z-index: 1;
     position: relative;
+    overflow: hidden;
     
     @media screen and (min-width: 1024px) {
         margin: -11rem auto 3rem;

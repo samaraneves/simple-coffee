@@ -9,8 +9,7 @@ export const Section = styled.section`
     img {
         z-index: 1;
         position: absolute;
-        width: 250px;
-        left: 0;
+        left: calc(100% - 70%);
         right: 0;
         bottom: calc(100% - 110px);
         margin: 0 auto;
@@ -19,7 +18,8 @@ export const Section = styled.section`
 
 export const Text = styled.p`
     width: 100%;
-    max-width: calc(100% - 30%);
+    min-width: 220px;
+    max-width: 480px;
     text-align: center;
     margin: 1rem auto;
     font-size: 1rem;
@@ -28,12 +28,4 @@ export const Text = styled.p`
     line-height: 1.5;
     position: relative;
     z-index: 2;
-
-    @media screen and (min-width: 350px) {
-        max-width: calc(100% - 30%);
-    }
-
-    @media screen and (min-width: 1024px) {
-        max-width: calc(100% - 50%);
-    }
 `
