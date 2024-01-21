@@ -24,6 +24,20 @@ const GlobalStyle = createGlobalStyle`
         font-family: var(--primary-font);
         font-weight: var(--medium-weigth, 300);
         color: var(--gray-color, #6F757C);
+        scrollbar-width: thin;
+    }
+
+    body::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    body::-webkit-scrollbar-track {
+        background-color: var(--primary-color);
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: var(--gray-color);
+        border-radius: 6px;
     }
 `
 
