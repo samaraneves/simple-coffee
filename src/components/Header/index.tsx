@@ -7,7 +7,7 @@ type HeaderProps = {
 const Header = ({ children }: HeaderProps) => {
     return (
         <HeaderElement>
-        {children}
+            {children}
         </HeaderElement>
     )
 }

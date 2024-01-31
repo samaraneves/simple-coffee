@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Section = styled.section`
+export const DescriptionSection = styled.section`
     width: 100%;
     text-align: center;
     position: relative; 
@@ -15,6 +15,16 @@ export const Section = styled.section`
         margin: 0 auto;
     }
 `
+export const ProductsSection = styled.section`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (min-width: 1024px) {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+`
 
 export const Text = styled.p`
     width: 100%;
@@ -22,9 +32,9 @@ export const Text = styled.p`
     max-width: 480px;
     text-align: center;
     margin: 1rem auto;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: var(--gray-color, #BEE3CC);
-    font-weight: var(--medium-weight);
+    font-weight: var(--medium-weight, 400);
     line-height: 1.5;
     position: relative;
     z-index: 2;
