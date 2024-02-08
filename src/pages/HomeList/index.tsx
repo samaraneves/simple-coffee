@@ -7,8 +7,11 @@ import Background from "../../assets/jpg/background.jpg"
 import Signature from "../../assets/svg/signature.svg"
 
 import { DescriptionSection, ProductsSection, Text } from "./style"
+import { useProducts } from "../../hooks/useProducts"
 
 const HomeList = () => {
+    const { products, loading } = useProducts()
+
     return (
         <>
             <Header>
@@ -27,27 +30,41 @@ const HomeList = () => {
                         description="Our Collection"
                     />
                     <Text>
-                        Introducing our Coffee Collection, a selection of unique coffees from different roast types and origins, expertly roasted in small batches and shipped fresh weekly.
+                        Introducing our Coffee Collection, a selection of unique coffees from different roast types and origins, 
+                        expertly roasted in small batches and shipped fresh weekly.
                     </Text>
                 </DescriptionSection>
                 <ProductsSection>
-                    <Card.Root>
-                        <Card.ImageWrapper>
-                            <Card.Image 
-                                src='https://csyxkpbavpcrhwqhcpyy.supabase.co/storage/v1/object/public/assets/coffee-challenge/cappuccino.jpg' 
-                                alt='Produto aqui'
-                                width='100%'
-                            />
-                            <Card.Flag description="Popular"/>
-                        </Card.ImageWrapper>
-                        <Card.Information>
-                            <Card.Line>
-                                <Card.Title description='Home Coffee' />
-                                <Card.Price value={10.9} />
-                            </Card.Line>
-                            <Card.Ratings rating={0} votes={100} />
-                        </Card.Information>
-                    </Card.Root>  
+                    {
+                        !loading && products && (
+                            products.map(product => (
+                                    <Card.Root key={product?.id}>
+                                        <Card.ImageWrapper>
+                                            <Card.Image 
+                                                src={product?.image}
+                                                alt={product?.name}
+                                                width='100%'
+                                            />
+                                            {
+                                                product?.popular && <Card.Flag description="Popular"/>
+                                            }
+                                        </Card.ImageWrapper>
+                                        <Card.Information>
+                                            <Card.Line>
+                                                <Card.Title description={product?.name} />
+                                                <Card.Price value={product?.price} />
+                                            </Card.Line>
+                                            <Card.Ratings 
+                                                rating={product?.rating}
+                                                votes={product?.votes} 
+                                                available={product?.available} 
+                                            />
+                                        </Card.Information>
+                                    </Card.Root>
+                                )
+                            )
+                        )
+                    }
                 </ProductsSection>
             </Main>
         </>

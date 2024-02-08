@@ -1,4 +1,3 @@
-import CardAlert from "./CardAlert";
 import CardFlag from "./CardFlag";
 import CardImage from "./CardImage";
 import CardImageWrapper from "./CardImageWrapper";
@@ -15,7 +14,6 @@ export const Card = {
     Price: CardPrice,
     Ratings: CardRatings,
     Title: CardTitle,
-    Alert: CardAlert,
     Line: CardLine,
     Image: CardImage,
     ImageWrapper: CardImageWrapper,

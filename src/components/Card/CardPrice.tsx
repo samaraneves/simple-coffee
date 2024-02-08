@@ -1,15 +1,14 @@
-import { currency } from "../../utils";
 import { CardPriceElement } from "./style"
 
 type CardPriceProps = {
     children?: never;
-    value: number;
+    value: string;
 }
 
-const CardPrice = ({ value = 0 }: CardPriceProps) => {
+const CardPrice = ({ value = '' }: CardPriceProps) => {
     return (
         <CardPriceElement>
-            {currency(value)}
+            {value}
         </CardPriceElement>
     )
 }

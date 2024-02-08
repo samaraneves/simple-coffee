@@ -18,11 +18,21 @@ export const DescriptionSection = styled.section`
 export const ProductsSection = styled.section`
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    @media screen and (min-width: 650px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 
     @media screen and (min-width: 1024px) {
-        max-width: 1024px;
+        max-width: 990px;
         margin: 0 auto;
+        column-gap: 2rem;
+        row-gap: 3rem;
     }
 `
 

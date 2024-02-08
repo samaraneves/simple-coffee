@@ -5,7 +5,12 @@ export const CardRootElement = styled.div`
     max-width: 300px;
 `
 export const CardInformationElement = styled.div`
+    margin-top: .5rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    line-height: 2;
 `
 
 export const CardImageElement = styled.img`
@@ -43,20 +48,25 @@ export const CardPriceElement = styled.span`
     text-align: center;
     border-radius: 8px;
     font-weight: bold;
+    height: 20px;
+    display: flex;
+    align-items: center;
 `
 
 export const CardLineElement = styled.div`
     width: 100%;
-    padding: 1rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 `
 export const CardRatingsWrapper = styled.div`
-    width: 100%;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: space-between;
+`
+export const CardRatingsInformation = styled.div`
+    display: flex;
+    gap: 0.3rem;
 `
 
 export const CardRatingsElement = styled.span`
