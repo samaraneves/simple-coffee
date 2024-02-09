@@ -1,8 +1,10 @@
-# React + TypeScript + Vite
+# Simple Coffee
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma única página responsável por realizar a listagem de produtos de uma cafeteria. A exibição das opções é constituída por um card que retorna informações de disponibilidade de estoque, nota do produto, quantidade de avaliações fornecidas, foto, nome e preço. Inclui validações como a exibição de informações de avaliações ainda não fornecidas, exibição da etiqueta de popularidade produto, além do alerta de item fora de estoque. 
 
-Currently, two official plugins are available:
+## Sumário 
+- [Motivação](-Motivação)
+## Motivação
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
