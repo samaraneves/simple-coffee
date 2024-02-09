@@ -14,7 +14,7 @@ enum FilterProductsEnum {
 
 export const useProducts = () => {
     const [products, setProducts] = useState<IProduct[]>([])
-    const [selectFilter, setSelectFilter] = useState<string>('all')
+    const [selectFilter, setSelectFilter] = useState<string>(FilterProductsEnum.AllProducts)
     const [loading, setLoading] = useState<boolean>(false)
 
     const filterOptionsProduct: FilterProducts[] = [
@@ -58,8 +58,9 @@ export const useProducts = () => {
         }
     }, [products])
 
-    const selectFilterOption = (event: React.MouseEvent<HTMLElement>): void => {
-        setSelectFilter(event?.target?.value)
+    const selectFilterOption = (event: React.MouseEvent<HTMLButtonElement>) => {
+        const target = event?.target as HTMLButtonElement;
+        setSelectFilter(target.value)
     }
 
     useEffect(() => {

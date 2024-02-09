@@ -6,7 +6,7 @@ type ButtonProps = {
     description?: string;
     value?: string;
     disabled?: boolean;
-    onClick?: (event: React.MouseEvent<HTMLElement>) => void
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const Button = ({ name, id, description = 'New Button', value, disabled = false, onClick }: ButtonProps) => {
