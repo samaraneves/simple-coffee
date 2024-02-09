@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const ButtonsContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+`
+
 export const DescriptionSection = styled.section`
     width: 100%;
     text-align: center;

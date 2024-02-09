@@ -3,14 +3,16 @@ import Main from "../../components/Main"
 import Heading from "../../components/Heading"
 import { Card } from "../../components/Card"
 
+import { useProducts } from "../../hooks/useProducts"
+
 import Background from "../../assets/jpg/background.jpg"
 import Signature from "../../assets/svg/signature.svg"
 
-import { DescriptionSection, ProductsSection, Text } from "./style"
-import { useProducts } from "../../hooks/useProducts"
+import { ButtonsContainer, DescriptionSection, ProductsSection, Text } from "./style"
+import Button from "../../components/Button"
 
 const HomeList = () => {
-    const { products, loading } = useProducts()
+    const { products, loading, selectFilterOption, filterOptionsProduct } = useProducts()
 
     return (
         <>
@@ -34,7 +36,24 @@ const HomeList = () => {
                         expertly roasted in small batches and shipped fresh weekly.
                     </Text>
                 </DescriptionSection>
+
                 <ProductsSection>
+                    <ButtonsContainer>
+                        {
+                            filterOptionsProduct.map(option => (
+                                <Button
+                                    key={option?.name}
+                                    name={option?.name}
+                                    value={option?.name}
+                                    id={option?.name}
+                                    description={option?.description}
+                                    onClick={selectFilterOption}
+                                />
+                            ))
+                        }
+                        
+                    </ButtonsContainer>
+                
                     {
                         !loading && products && (
                             products.map(product => (

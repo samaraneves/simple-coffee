@@ -9,30 +9,32 @@ type CardRatingsProps = {
 }
 
 const CardRatings = ({ rating = 0, votes = 0, available = false}: CardRatingsProps) => {
+    const hasRating = rating && votes;
+
     return (
         <>
             {
                 <CardRatingsWrapper>
                     <CardRatingsInformation>
-                    {rating && votes ?  
-                            <img src={StarFill} alt="Star" /> 
-                            : <img src={Star} alt="Star fill" />
-                        }
-                        {rating && votes ? 
-                            <CardRatingsElement> 
-                                {Number(rating).toFixed(2)} 
-                            </CardRatingsElement> : ( 
+                    {hasRating ?  
+                        <img src={StarFill} alt="Star" /> 
+                        : <img src={Star} alt="Star fill" />
+                    }
+                    {hasRating ? 
+                        <CardRatingsElement> 
+                            {Number(rating).toFixed(2)} 
+                        </CardRatingsElement> : ( 
+                        <CardRatingsVotesElement>
+                            No ratings
+                        </CardRatingsVotesElement>
+                    )}
+                    {
+                        !!votes && (
                             <CardRatingsVotesElement>
-                                No ratings
+                                ({votes} votes)
                             </CardRatingsVotesElement>
-                        )}
-                        {
-                            !!votes && (
-                                <CardRatingsVotesElement>
-                                    ({votes} votes)
-                                </CardRatingsVotesElement>
-                            )
-                        }
+                        )
+                    }
                     </CardRatingsInformation>
                         {
                             !available && (
