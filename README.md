@@ -17,8 +17,9 @@ Para verificar a reprodução deste padrão poderá conferir no arquivo do compo
 Com foco na reprodução do padrão, não houve uso de muitos recursos, mas abaixo listarei o utilizado:
 - React.js
 - Typescript
-- Styled-components e Styled-reset (Dependência)
-- Axios (Dependência)
+- Styled-components e Styled-reset 
+- Axios 
+- React Placeholder 
 - Yarn
 - Vite
 
