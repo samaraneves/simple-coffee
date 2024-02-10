@@ -1,6 +1,16 @@
 import { useCallback, useEffect, useState } from "react"
-import { IProduct } from "../interfaces"
 import ProductService from "../services/ProductService"
+
+export interface IProduct {
+    id: number,
+    name: string,
+    image: string,
+    price: string,
+    rating: number,
+    votes: number,
+    popular: boolean,
+    available: boolean
+}
 
 type FilterProducts = {
     description: string;
