@@ -5,7 +5,8 @@ export const ButtonElement = styled.button`
     padding: .6rem .8rem;
     font-size: 1rem;
     color: var(--red-light-color, #FEF7EE);
-    font-weight: var(--medium-weight, 400);
+    font-weight: var(--large-weight, 500);
+    font-family: var(--primary-font);
     border: 0;
     border-radius: 10px;
 

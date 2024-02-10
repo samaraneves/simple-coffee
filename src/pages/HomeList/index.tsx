@@ -54,36 +54,36 @@ const HomeList = () => {
                         
                     </ButtonsContainer>
                 
-                    {
-                        !loading && products && (
+                    <Card.Placeholder ready={!loading}>
+                        { 
                             products.map(product => (
-                                    <Card.Root key={product?.id}>
-                                        <Card.ImageWrapper>
-                                            <Card.Image 
-                                                src={product?.image}
-                                                alt={product?.name}
-                                                width='100%'
-                                            />
-                                            {
-                                                product?.popular && <Card.Flag description="Popular"/>
-                                            }
-                                        </Card.ImageWrapper>
-                                        <Card.Information>
-                                            <Card.Line>
-                                                <Card.Title description={product?.name} />
-                                                <Card.Price value={product?.price} />
-                                            </Card.Line>
-                                            <Card.Ratings 
-                                                rating={product?.rating}
-                                                votes={product?.votes} 
-                                                available={product?.available} 
-                                            />
-                                        </Card.Information>
-                                    </Card.Root>
-                                )
+                                <Card.Root key={product?.id}>
+                                    <Card.ImageWrapper>
+                                        <Card.Image 
+                                            src={product?.image}
+                                            alt={product?.name}
+                                            width='100%'
+                                        />
+                                        {
+                                            product?.popular && <Card.Flag description="Popular"/>
+                                        }
+                                    </Card.ImageWrapper>
+                                    <Card.Information>
+                                        <Card.Line>
+                                            <Card.Title description={product?.name} />
+                                            <Card.Price value={product?.price} />
+                                        </Card.Line>
+                                        <Card.Ratings 
+                                            rating={product?.rating}
+                                            votes={product?.votes} 
+                                            available={product?.available} 
+                                        />
+                                    </Card.Information>
+                                </Card.Root>
                             )
                         )
-                    }
+                        }
+                    </Card.Placeholder>
                 </ProductsSection>
             </Main>
         </>

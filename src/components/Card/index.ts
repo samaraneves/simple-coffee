@@ -3,6 +3,7 @@ import CardImage from "./CardImage";
 import CardImageWrapper from "./CardImageWrapper";
 import CardInformation from "./CardInformation";
 import CardLine from "./CardLine";
+import CardPlaceholder from "./CardPlaceholder";
 import CardPrice from "./CardPrice";
 import CardRatings from "./CardRatings";
 import CardRoot from "./CardRoot";
@@ -17,5 +18,7 @@ export const Card = {
     Line: CardLine,
     Image: CardImage,
     ImageWrapper: CardImageWrapper,
-    Information: CardInformation
+    Information: CardInformation,
+    Placeholder: CardPlaceholder
 }
+
